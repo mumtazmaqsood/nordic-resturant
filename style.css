@@ -18,6 +18,7 @@ html {
     /* font-size by default is 16px  */
     /* font-size: 10px; (10/16*100) = 62,5% */
     font-size: 62.5%;
+    scroll-behavior:smooth;
 }
 
 body {
@@ -33,6 +34,25 @@ body {
     margin: auto; /* make it in center */ 
 }
 
+
+.btn {
+    display: inline-block ; /* bcz "a" tag is inline, we need to apply padding, margin etc */
+    padding: 1em 2.5em;   
+    /* em is relative to the font-size of its direct or nearest parent
+    here is its neart parent is html--> that is 16px
+    so 1em = 16px top & bottom , 2.5em = 40px left right  */
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.btn-primary {
+    color: #ffffff;
+    background: #168083;
+}
 
 
 /* ############################ END UTILITY CLASSES ###################################### */
@@ -92,3 +112,426 @@ body {
 .navbar a:hover{
     color: #117964;
 }
+
+
+
+/* ###################### ShowCase Area ##################################### */
+
+.showcase-area {
+    background-image: url("./img/header-image2.jpg");
+    height: 50vh;
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+.showcase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+    height: 100%;
+    font-size: 1.6rem; 
+}
+
+.main-title {
+    text-transform: uppercase;
+}
+
+/* ###################### End ShowCase Area ##################################### */
+
+
+/* ###################### About Section ##################################### */
+
+#about {
+    padding: 50px 0;
+    background: #f5f5f7;
+    
+}
+
+.about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid #666; */
+    
+}
+#about h2{
+    font-size: 3.2rem;
+}
+#about p{
+    font-size: 1.6rem;
+    color: #555555;
+}
+#about .small{
+    font-size: 1.6rem;
+    color: #666666;
+    font-weight: 600;
+}
+
+/* about-wrapper total width is 1200px , there is 2 flex-items text & image
+image size is too high and overflow from flex container, 
+to solve this problem ,  flex item property flex apply , which has flex grow, flex shrink
+and flex basis image & text take same width 400px within container and also in main container
+on the flex-wrap and fix the height of the image */
+
+/* for animation---> image comming from right side and stay in center
+first move image to right side by using TRANSFORM ->TRANSLATE 
+then make animation */
+.about-image { 
+    flex: 1 1 400px;
+     /* flex grow, flex shrink flex basis */
+    padding: 30px;
+    /* border: 2px solid red; */
+    transform: translateX(150%); /* image goes out to the screen */
+    animation: image-out 1s ease-in-out forwards; /* animation name, duration, smoothness, fill */
+}
+
+/* for image animation  */
+@keyframes image-out {
+    100% {
+        transform: translate(0);
+    }
+}
+
+.about-text {
+    flex: 1 1 400px; /* flex grow, flex shrink flex basis */
+    padding: 30px;
+    margin: auto; /* while using flex box , use auto and text ll be in center  */
+    transform: translateX(-150%); /* text goes out to the screen left side */
+    animation: text-out 1s ease-in-out forwards;
+}   
+
+/* for text animation */
+@keyframes text-out {
+    100% {
+        transform: translate(0);
+    }
+}
+
+.about-image img {
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;  /* image should not shrink */
+    object-position: right; 
+    /* on small screen which part of the image should be focused */
+}
+
+
+/* ###################### End About Section ##################################### */
+
+
+
+/* ###################### Food Section ##################################### */
+
+#food {
+    padding: 5rem 0 10rem 0;
+}
+
+#food h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+    color: #555555;
+    text-transform: uppercase;
+}
+.food-container {
+    display: flex;
+    /* border:  red solid 2px; */
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.food-container img {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+}
+.img-container {
+    margin: 0 1rem;
+    position: relative;
+}
+
+/* for Food type > animation, image container's position become relative
+so and image content position is absolute(so that image content align itself w.r.t it parent)
+*/
+.img-content {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+
+    transition: all 0.3s ease-in-out;
+}
+.img-content h3 {
+    color: #ffffff;
+    font-size: 3rem;
+}
+.img-content a{
+    font-size: 1.2rem;
+}
+
+/* this pesudo class create black transperent rectangle on top of image container
+bcz z-index is 1 and its position is absolute
+when hover on this class , its opacity become 1 from 0 and scaleY 1 from 0 
+*/
+.img-container::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.871);
+    z-index: 1;
+
+    /*for animation */
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.img-container:hover::after {
+    opacity: 1;
+    transform: scaleY(1)
+}
+
+.img-container:hover .img-content{
+    opacity: 1;
+    top: 40%;
+}
+/* ###################### End Food Section ##################################### */
+
+
+
+
+/* ###################### Start Food Menu Section ##################################### */
+
+/* h1
+        main div ---------------------------------  flex  
+            food item div * 6    -----------------  flex                             
+                img div
+                    img
+                description div
+                    h2
+                    p*2
+        /maind div
+ */
+
+.food-menu-heading {
+    font-size: 3.5rem;
+    color: #666666;
+    text-align: center;
+    font-weight: 400;
+}
+
+.food-menu-container {
+    display: flex;  
+    /* border:  red solid 2px; */
+    flex-wrap: wrap;
+    padding: 50px 0 30px 0; 
+}
+.food-menu-container img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.food-menu-item {
+    display: flex;
+    /* border: tomato solid 1px; */
+    flex: 1 1 500px;    /* main container is 1200px , 
+    flex grow, flex shrink and flex basis500px(both items img & content take equal space)*/
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+    
+
+}
+.food-description {
+    margin: auto 1.5rem;
+    /* border: tomato solid 1px; */
+}
+.food-title {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #444444;
+}
+
+.food-description p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #555555;
+}
+.food-description .food-price {
+    color: white; 
+}
+.food-description .food-price:hover{
+    background: #6fbfc2fb;;
+    
+}
+
+/* ###################### End Food Menu Section ##################################### */
+
+
+/* ###################### Testimonal Section ##################################### */
+/* section testimonials id testimonials
+            h2 testimonal.title     
+            div testimonal-container container
+                div testimonal-box * 3
+                    div start-rating
+                        span*5
+                    p.testimonal-text
+                    div customer-detail
+                        div customer-photo
+                            img male-photo1
+                        p.customer-name 
+            /div
+    */
+
+#testimonals {
+    padding: 5rem 0;
+    background: rgb(240,240,240);
+}
+
+.testimonal.title {
+    font-size: 3rem;
+    color: #666666;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.testimonal-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.3rem;
+
+}
+
+.customer-photo img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.star-rating {
+    text-align: center;
+    color: gold;
+}
+.testimonal-box .testimonal-text {
+    /* text-align: center; */
+    margin-bottom: 1rem 0;
+    color: #444444;
+}
+
+.testimonal-box {
+    text-align: center;
+    padding: 1rem;
+}
+
+/* ###################### End Testimonal Section ##################################### */
+
+
+/* ###################### Contact Section ##################################### */
+/* 
+section #contact
+            div .contact-container .container   flex
+                div .contact-image
+                    img
+                /div
+                div .from-container
+                    h2 contact-us
+                    input name
+                    input email
+                    textarea message
+                    a .btn .btn-primary */
+
+
+#contact {
+    padding: 5rem 0;
+    background: rgb(226, 226, 226); 
+}
+.contact-container {
+    display: flex;
+    background: #ffffff;
+    justify-content: space-between;
+}
+
+.contact-image {
+    width: 50%;
+}
+
+.contact-image img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.form-container {
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+    
+    /* display: flex;
+    flex-direction: column; */
+}
+.form-container input, .form-container textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    box-shadow: none;
+    outline: none;
+    margin-bottom: 1rem;
+    color: #444444;
+    font-weight: 500;
+}
+
+.form-container h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #444444;
+    margin-bottom: 1rem;
+}
+
+.form-container a {
+    font-size: 1.2rem;
+    /* align-self: flex-end; */
+    
+}
+
+/* ###################### End Contact Section ##################################### */
+
+
+
+/* ###################### Footer Section ##################################### */
+#footer {
+    text-align: center;
+    font-size: 1rem;
+    padding: 3rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: rgb(65,65,65);
+}
+/* ###################### End Footer Section ##################################### */

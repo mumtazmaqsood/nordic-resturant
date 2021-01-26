@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
     <title>Resturant Project</title>
 </head>
+
 <body>
-    
+
     <!-- nav bar , it has hambruger menu  on mobile app-->
 
     <nav class="navbar">
@@ -22,9 +25,9 @@
             <ul class="navbar-items">
                 <li><a href="#showcase">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#category">Category</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#testimonial">Testimonial</a></li>
+                <li><a href="#food">Category</a></li>
+                <li><a href="#food-menu">Menu</a></li>
+                <li><a href="#testimonals">Testimonial</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <h1 class="logo">Nordic Resturant</h1>
@@ -32,5 +35,286 @@
     </nav>
 
 
+    <!-- for show case area -->
+
+    <section class="showcase-area" id="showcase">
+        <div class="showcase-container">
+            <h1 class="main-title">Organic Food</h1>
+            <p>Best for your Health</p>
+            <a href="#" class="btn btn-primary">Menu</a>
+        </div>
+    </section>
+
+    <!-- about section -->
+    <section id="about">
+        <div class="about-wrapper container">
+            <div class="about-text">
+                <p class="small">About us</p>
+                <h2>Oranginc Food Heading</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum porro dicta fugiat blanditiis
+                    minima ea numquam voluptatibus laudantium eaque beatae iure, cupiditate fugit illum, vel ab. Fuga,
+                    magni aut dolorem sunt quis eos harum nam blanditiis velit modi libero nisi.</p>
+            </div>
+            <div class="about-image">
+                <img src="./img/about-photo.jpg" alt="about-us">
+            </div>
+        </div>
+    </section>
+    <!-- End about section -->
+
+    <!-- Food section -->
+
+    <section id="food">
+        <h2>Food Types</h2>
+        <div class="food-container container">
+            <div class="food-type fruit">
+                <div class="img-container">
+                    <img src="./img/food1.jpg" alt="food1" class="img-container">
+                    <div class="img-content">
+                        <h3>Fruit</h3>
+                        <a href="#" class="btn btn-primary"> Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type vegetable">
+                <div class="img-container">
+                    <img src="./img/food2.jpg" alt="food2" class="img-container">
+                    <div class="img-content">
+                        <h3>vegetable</h3>
+                        <a href="#" class="btn btn-primary"> Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type grain">
+                <div class="img-container">
+                    <img src="./img/food3.jpg" alt="food3" class="img-container">
+                    <div class="img-content">
+                        <h3>Grains</h3>
+                        <a href="#" class="btn btn-primary"> Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </class>
+    </section>
+    <!-- End Food section -->
+
+
+    <!-- Start Food Menu section -->
+
+    <!--  
+        h1
+        main div  
+            food item div * 6 
+                img div
+                    img
+                description div
+                    h2
+                    p*2
+        /maind div    
+     -->
+    <section id="food-menu">
+        <h1 class="food-menu-heading">Food Menu</h1>
+        <div class="food-menu-container container">
+            <div class="food-menu-item">
+                <div class="food-image">
+                    <img src="./img/food-menu1.jpg" alt="menu1">
+                </div>
+                <div class="food-description">
+                    <h2 class="food-title">Food Item1</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab?
+                    </p>
+                    <p class="food-price btn btn-primary">Price: &#128;</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-image">
+                    <img src="./img/food-menu2.jpg" alt="menu2">
+                </div>
+                <div class="food-description">
+                    <h2 class="food-title">Food Item2</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab?</p>
+                    <p class="food-price btn btn-primary">Price: &#128;</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-image">
+                    <img src="./img/food-menu3.jpg" alt="menu3">
+                </div>
+                <div class="food-description">
+                    <h2 class="food-title">Food Item3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab?</p>
+                    <p class="food-price btn btn-primary">Price: &#128;20</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-image">
+                    <img src="./img/food-menu4.jpg" alt="menu4">
+                </div>
+                <div class="food-description">
+                    <h2 class="food-title">Food Item4</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab
+                    </p>
+                    <p class="food-price btn btn-primary">Price: &#128;30</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-image">
+                    <img src="./img/food-menu5.jpg" alt="menu5">
+                </div>
+                <div class="food-description">
+                    <h2 class="food-title">Food Item5</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab?</p>
+                    <p class="food-price btn btn-primary">Price: &#128;15</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-image">
+                    <img src="./img/food-menu6.jpg" alt="menu6">
+                </div>
+                <div class="food-description">
+                    <h2 class="food-title">Food Item6</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ab?</p>
+                    <p class="food-price btn btn-primary">Price: &#128;25</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Food Menu section -->
+
+
+    <!-- Testimonials section -->
+    <!-- 
+        section testimonials id testimonials
+            h2 testimonal.title
+            div testimonal-container container
+                div testimonal-box * 3
+                    div start-rating
+                        span*5
+                    p.testimonal-text
+                    div customer-detail
+                        div customer-photo
+                            img male-photo1
+                        p.customer-name
+     -->
+
+    <section id="testimonals">
+        <h2 class="testimonal title">Testimonal Title</h2>
+        <div class="testimonal-container container">
+            <!-- Testimonal box1 -->
+            <div class="testimonal-box">
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="testimonal-text">Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. Ut, dolorem?</p>
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="./img/male-photo1.jpg" alt="male1">
+                    </div>
+                    <p class="customer-name">Customer Name</p>
+                </div>
+            </div>
+            <!-- End Testimonal box1 -->
+
+            <!-- Testimonal box2 -->
+            <div class="testimonal-box">
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="testimonal-text">Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. Ut, dolorem?</p>
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="./img/male-photo2.jpg" alt="male2">
+                    </div>
+                    <p class="customer-name">Customer Name</p>
+                </div>
+            </div>
+            <!-- End Testimonal box2 -->
+
+            <!-- Testimonal box3 -->
+            <div class="testimonal-box">
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="testimonal-text">Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. Ut, dolorem?</p>
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="./img/male-photo3.jpg" alt="male3">
+                    </div>
+                    <p class="customer-name">Customer Name</p>
+                </div>
+            </div>
+            <!-- End Testimonal box2 -->
+        </div>
+    </section>
+    <!-- End Testimonials section -->
+
+
+    <!-- Contact section -->
+    <!-- 
+        section #contact
+            div .contact-container .container
+                div .contact-image
+                    img
+                /div
+                div .from-container
+                    h2 contact-us
+                    input name
+                    input email
+                    textarea message
+                    a .btn .btn-primary
+     -->
+
+    <section id="contact">
+        <div class="contact-container container">
+            <div class="contact-image">
+                <img src="./img/restraunt-image.jpg" alt="contactimage">
+            </div>
+            <div class="form-container">
+                <h2>Contact us</h2>
+                <input type="text" placeholder="Enter your name">
+                <input type="text" placeholder="Enter your email">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Enter Message"></textarea>
+                <a href="#" class="btn btn-primary">Submit</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact section -->
+
+
+    <!-- Footer section -->
+    <!-- 
+        foot #footer
+            h2 
+     -->
+    <!-- End Footer section -->
+
+    <footer id="footer">
+        <h2>Nordic Resturant &copy; all rights reserved</h2>
+    </footer>
 </body>
+
 </html>
